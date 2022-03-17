@@ -15,7 +15,7 @@ Web service que permite realizar el tipo de cambio y actualizar los valores de l
 ## 1. Instalacón
 
 Clonar el proyecto desde github:
-http://devops.imiclaroapp.com.pe:7000/ClaroVentas/ws-sb-claro-venta-precio.git
+https://github.com/yanpieer-romero-unmsm/spring-app-tipoCambio.git
 
 Luego deberas moverte a la rama develop:
 
