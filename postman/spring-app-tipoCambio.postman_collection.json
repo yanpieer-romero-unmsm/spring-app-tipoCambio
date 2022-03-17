@@ -1,0 +1,681 @@
+{
+	"info": {
+		"_postman_id": "2f345ca1-d5e9-48e4-b525-cfc093d18309",
+		"name": "spring-app-tipoCambio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "convertir",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "developer",
+						"value": "Yanpieer",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": \"100\",\r\n    \"monedaOrigen\": \"libras\",\r\n    \"monedaDestino\": \"euros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/convertir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"convertir"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "convertir",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "developer",
+								"value": "Yanpieer",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": \"100\",\r\n    \"monedaOrigen\": \"libras\",\r\n    \"monedaDestino\": \"euros\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/convertir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"convertir"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:17:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"desarrollador\": \"Yanpieer Romero\",\n    \"monto\": 100,\n    \"montoConTipoCambio\": 119.46,\n    \"monedaOrigen\": \"libras\",\n    \"monedaDestino\": \"euros\",\n    \"tipoCambio\": 1.19\n}"
+				}
+			]
+		},
+		{
+			"name": "error de parametros - convertir",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "developer",
+						"value": "Yanpieer",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": -1,\r\n    \"monedaOrigen\": \"soles\",\r\n    \"monedaDestino\": \"euros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/convertir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"convertir"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "error de parametros - convertir",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "developer",
+								"value": "Yanpieer",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": -1,\r\n    \"monedaOrigen\": \"soles\",\r\n    \"monedaDestino\": \"euros\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/convertir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"convertir"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:17:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseStatus\": {\n        \"codigoRespuesta\": \"1\",\n        \"descripcionRespuesta\": \"Uno o varios parametros del request son inválidos\"\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
+				}
+			]
+		},
+		{
+			"name": "error de inesperado - convertir",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "developer",
+						"value": "Yanpieer",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": 1,\r\n    \"monedaOrigen\": \"sole\",\r\n    \"monedaDestino\": \"euros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/convertir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"convertir"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "error de inesperado - convertir",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "developer",
+								"value": "Yanpieer",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": 1,\r\n    \"monedaOrigen\": \"sole\",\r\n    \"monedaDestino\": \"euros\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/convertir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"convertir"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:17:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseStatus\": {\n        \"status\": \"-3\",\n        \"codigoRespuesta\": \"-3\",\n        \"descripcionRespuesta\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"ubicacionError\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"fecha\": \"2022-03-17T06:17:22.113+00:00\",\n        \"detalleError\": {\n            \"errorCode\": \"-3\",\n            \"errorDescripcion\": \"pe.com.tcs.api.tipocambio.common.exceptions.BaseException: Error inesperado. Error: [java.lang.NullPointerException]\"\n        }\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
+				}
+			]
+		},
+		{
+			"name": "actualizar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "developer",
+						"value": "Yanpieer",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"actualizar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "actualizar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "developer",
+								"value": "Yanpieer",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"actualizar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:17:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"desarrollador\": \"Yanpieer Romero\",\n    \"mensaje\": \"Operación exitosa\",\n    \"tipo\": \"soles\",\n    \"valor\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "error de parametros - actualizar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "developer",
+						"value": "Yanpieer",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": -1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"actualizar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "error de parametros - actualizar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "developer",
+								"value": "Yanpieer",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": -1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"actualizar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:17:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseStatus\": {\n        \"codigoRespuesta\": \"1\",\n        \"descripcionRespuesta\": \"Uno o varios parametros del request son inválidos\"\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
+				}
+			]
+		},
+		{
+			"name": "error de inesperado - actualizar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "developer",
+						"value": "Yanpieer",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"sole\",\r\n    \"valor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"actualizar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "error de inesperado - actualizar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "developer",
+								"value": "Yanpieer",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"sole\",\r\n    \"valor\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"actualizar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:17:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseStatus\": {\n        \"status\": \"-3\",\n        \"codigoRespuesta\": \"-3\",\n        \"descripcionRespuesta\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"ubicacionError\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"fecha\": \"2022-03-17T06:17:28.473+00:00\",\n        \"detalleError\": {\n            \"errorCode\": \"-3\",\n            \"errorDescripcion\": \"pe.com.tcs.api.tipocambio.common.exceptions.BaseException: Error inesperado. Error: [java.lang.NullPointerException]\"\n        }\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
+				}
+			]
+		}
+	]
+}
