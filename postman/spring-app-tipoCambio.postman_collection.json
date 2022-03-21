@@ -1,20 +1,390 @@
 {
 	"info": {
-		"_postman_id": "2f345ca1-d5e9-48e4-b525-cfc093d18309",
+		"_postman_id": "c1ee25ae-aade-4e96-be5f-00164eed82e3",
 		"name": "spring-app-tipoCambio",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "convertir",
+			"name": "caso exitoso - autenticar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", \"Bearer \" + jsonData.jwt);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/autenticar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"autenticar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "caso exitoso - autenticar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/autenticar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"autenticar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 02:04:53 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"desarrollador\": \"Yanpieer Romero\",\n    \"jwt\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0Nzg2NDI5MywiaWF0IjoxNjQ3ODI4MjkzfQ._yAprkveFBZQQNdOLhdO0L9C4CjV_zKU7UbApDRIY5Q\"\n}"
+				}
+			]
+		},
+		{
+			"name": "error de parametros - autenticar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", \"Bearer \" + jsonData.jwt);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": 12345,\n    \"password\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/autenticar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"autenticar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "error de parametros - autenticar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": 12345,\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/autenticar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"autenticar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 02:05:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseStatus\": {\n        \"codigoRespuesta\": \"1\",\n        \"descripcionRespuesta\": \"Uno o varios parametros del request son inválidos\"\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
+				}
+			]
+		},
+		{
+			"name": "credenciales invalidas - autenticar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", \"Bearer \" + jsonData.jwt);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/autenticar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"autenticar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "credenciales invalidas - autenticar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/autenticar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"autenticar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 02:05:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseStatus\": {\n        \"codigoRespuesta\": \"2\",\n        \"descripcionRespuesta\": \"El username o paswword son incorrectos\"\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
+				}
+			]
+		},
+		{
+			"name": "error de autorización - convertir",
 			"request": {
 				"method": "POST",
 				"header": [
-					{
-						"key": "developer",
-						"value": "Yanpieer",
-						"type": "text"
-					},
 					{
 						"key": "accept",
 						"value": "application/json",
@@ -47,18 +417,148 @@
 			},
 			"response": [
 				{
-					"name": "convertir",
+					"name": "error de autorización - convertir",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
 							{
-								"key": "developer",
-								"value": "Yanpieer",
+								"key": "accept",
+								"value": "application/json",
 								"type": "text"
-							},
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": \"100\",\r\n    \"monedaOrigen\": \"libras\",\r\n    \"monedaDestino\": \"euros\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/convertir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"convertir"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 02:05:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-03-21T02:05:46.289+00:00\",\n    \"status\": 403,\n    \"error\": \"Forbidden\",\n    \"message\": \"\",\n    \"path\": \"/api/tipocambios/v1/convertir\"\n}"
+				}
+			]
+		},
+		{
+			"name": "caso exitoso - convertir",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": \"100\",\r\n    \"monedaOrigen\": \"libras\",\r\n    \"monedaDestino\": \"euros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/convertir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"convertir"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "caso exitoso - convertir",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
 							{
 								"key": "accept",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -91,6 +591,30 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
@@ -100,7 +624,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 17 Mar 2022 06:17:13 GMT"
+							"value": "Mon, 21 Mar 2022 02:06:16 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -122,13 +646,13 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "developer",
-						"value": "Yanpieer",
+						"key": "accept",
+						"value": "application/json",
 						"type": "text"
 					},
 					{
-						"key": "accept",
-						"value": "application/json",
+						"key": "Authorization",
+						"value": "{{token}}",
 						"type": "text"
 					}
 				],
@@ -163,13 +687,13 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "developer",
-								"value": "Yanpieer",
+								"key": "accept",
+								"value": "application/json",
 								"type": "text"
 							},
 							{
-								"key": "accept",
-								"value": "application/json",
+								"key": "Authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -202,6 +726,30 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
@@ -211,7 +759,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 17 Mar 2022 06:17:19 GMT"
+							"value": "Mon, 21 Mar 2022 02:07:36 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -228,18 +776,18 @@
 			]
 		},
 		{
-			"name": "error de inesperado - convertir",
+			"name": "error inesperado - convertir",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
-						"key": "developer",
-						"value": "Yanpieer",
+						"key": "accept",
+						"value": "application/json",
 						"type": "text"
 					},
 					{
-						"key": "accept",
-						"value": "application/json",
+						"key": "Authorization",
+						"value": "{{token}}",
 						"type": "text"
 					}
 				],
@@ -269,18 +817,18 @@
 			},
 			"response": [
 				{
-					"name": "error de inesperado - convertir",
+					"name": "error inesperado - convertir",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
 							{
-								"key": "developer",
-								"value": "Yanpieer",
+								"key": "accept",
+								"value": "application/json",
 								"type": "text"
 							},
 							{
-								"key": "accept",
-								"value": "application/json",
+								"key": "Authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -313,6 +861,30 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
@@ -322,7 +894,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 17 Mar 2022 06:17:22 GMT"
+							"value": "Mon, 21 Mar 2022 02:07:51 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -334,21 +906,15 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"responseStatus\": {\n        \"status\": \"-3\",\n        \"codigoRespuesta\": \"-3\",\n        \"descripcionRespuesta\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"ubicacionError\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"fecha\": \"2022-03-17T06:17:22.113+00:00\",\n        \"detalleError\": {\n            \"errorCode\": \"-3\",\n            \"errorDescripcion\": \"pe.com.tcs.api.tipocambio.common.exceptions.BaseException: Error inesperado. Error: [java.lang.NullPointerException]\"\n        }\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
+					"body": "{\n    \"responseStatus\": {\n        \"status\": \"-3\",\n        \"codigoRespuesta\": \"-3\",\n        \"descripcionRespuesta\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"ubicacionError\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"fecha\": \"2022-03-21T02:07:51.551+00:00\",\n        \"detalleError\": {\n            \"errorCode\": \"-3\",\n            \"errorDescripcion\": \"pe.com.tcs.api.tipocambio.common.exceptions.BaseException: Error inesperado. Error: [java.lang.NullPointerException]\"\n        }\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
 				}
 			]
 		},
 		{
-			"name": "actualizar",
+			"name": "error de autorización - actualizar",
 			"request": {
 				"method": "POST",
 				"header": [
-					{
-						"key": "developer",
-						"value": "Yanpieer",
-						"type": "text",
-						"disabled": true
-					},
 					{
 						"key": "accept",
 						"value": "application/json",
@@ -357,7 +923,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": 1\r\n}",
+					"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": 2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -381,16 +947,10 @@
 			},
 			"response": [
 				{
-					"name": "actualizar",
+					"name": "error de autorización - actualizar",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
-							{
-								"key": "developer",
-								"value": "Yanpieer",
-								"type": "text",
-								"disabled": true
-							},
 							{
 								"key": "accept",
 								"value": "application/json",
@@ -399,7 +959,142 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": 1\r\n}",
+							"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/tipocambios/v1/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"tipocambios",
+								"v1",
+								"actualizar"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 02:08:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-03-21T02:08:25.904+00:00\",\n    \"status\": 403,\n    \"error\": \"Forbidden\",\n    \"message\": \"\",\n    \"path\": \"/api/tipocambios/v1/actualizar\"\n}"
+				}
+			]
+		},
+		{
+			"name": "caso exitoso - actualizar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/tipocambios/v1/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"tipocambios",
+						"v1",
+						"actualizar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "caso exitoso - actualizar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"soles\",\r\n    \"valor\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -426,6 +1121,30 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
@@ -435,7 +1154,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 17 Mar 2022 06:17:16 GMT"
+							"value": "Mon, 21 Mar 2022 02:09:09 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -447,7 +1166,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"desarrollador\": \"Yanpieer Romero\",\n    \"mensaje\": \"Operación exitosa\",\n    \"tipo\": \"soles\",\n    \"valor\": 1\n}"
+					"body": "{\n    \"desarrollador\": \"Yanpieer Romero\",\n    \"mensaje\": \"Operación exitosa\",\n    \"tipo\": \"soles\",\n    \"valor\": 2\n}"
 				}
 			]
 		},
@@ -457,14 +1176,13 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "developer",
-						"value": "Yanpieer",
-						"type": "text",
-						"disabled": true
-					},
-					{
 						"key": "accept",
 						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
 						"type": "text"
 					}
 				],
@@ -499,14 +1217,13 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "developer",
-								"value": "Yanpieer",
-								"type": "text",
-								"disabled": true
-							},
-							{
 								"key": "accept",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -539,6 +1256,30 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
@@ -548,7 +1289,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 17 Mar 2022 06:17:25 GMT"
+							"value": "Mon, 21 Mar 2022 02:09:19 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -565,19 +1306,18 @@
 			]
 		},
 		{
-			"name": "error de inesperado - actualizar",
+			"name": "error inesperado - actualizar",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
-						"key": "developer",
-						"value": "Yanpieer",
-						"type": "text",
-						"disabled": true
-					},
-					{
 						"key": "accept",
 						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
 						"type": "text"
 					}
 				],
@@ -607,19 +1347,18 @@
 			},
 			"response": [
 				{
-					"name": "error de inesperado - actualizar",
+					"name": "error inesperado - actualizar",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
 							{
-								"key": "developer",
-								"value": "Yanpieer",
-								"type": "text",
-								"disabled": true
-							},
-							{
 								"key": "accept",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
 								"type": "text"
 							}
 						],
@@ -652,6 +1391,30 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
@@ -661,7 +1424,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 17 Mar 2022 06:17:28 GMT"
+							"value": "Mon, 21 Mar 2022 02:09:46 GMT"
 						},
 						{
 							"key": "Keep-Alive",
@@ -673,7 +1436,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"responseStatus\": {\n        \"status\": \"-3\",\n        \"codigoRespuesta\": \"-3\",\n        \"descripcionRespuesta\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"ubicacionError\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"fecha\": \"2022-03-17T06:17:28.473+00:00\",\n        \"detalleError\": {\n            \"errorCode\": \"-3\",\n            \"errorDescripcion\": \"pe.com.tcs.api.tipocambio.common.exceptions.BaseException: Error inesperado. Error: [java.lang.NullPointerException]\"\n        }\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
+					"body": "{\n    \"responseStatus\": {\n        \"status\": \"-3\",\n        \"codigoRespuesta\": \"-3\",\n        \"descripcionRespuesta\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"ubicacionError\": \"Error inesperado. Error: [java.lang.NullPointerException]\",\n        \"fecha\": \"2022-03-21T02:09:46.417+00:00\",\n        \"detalleError\": {\n            \"errorCode\": \"-3\",\n            \"errorDescripcion\": \"pe.com.tcs.api.tipocambio.common.exceptions.BaseException: Error inesperado. Error: [java.lang.NullPointerException]\"\n        }\n    },\n    \"desarrollador\": \"Yanpieer Romero\"\n}"
 				}
 			]
 		}
