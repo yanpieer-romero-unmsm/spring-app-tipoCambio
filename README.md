@@ -8,12 +8,13 @@ Web service que permite realizar el tipo de cambio y actualizar los valores de l
         - [1.1.1 Pre-requisitos de Construcción](#pre-requisitos-de-construccion)
         - [1.1.2 Pruebas Unitarias](#pruebas-unitarias)
     - [1.2 Despliegue](#proceso-despliegue)
-        - [1.2.1 Descargar y despliegue de imagen remota](#Descargar-imagen-remota)
-        - [1.2.2 Pruebas Funcionales](#pruebas-funcionales)
+        - [1.2.1 Subir imagen a DockerHub](#Subir imagen a DockerHub)
+        - [1.2.2 Descargar y despliegue de imagen remota](#Descargar-imagen-remota)
+        - [1.2.3 Pruebas Funcionales](#pruebas-funcionales)
 - [2. Uso](#uso)
 - [3. Autor](#autor)
 
-## 1. Instalacón
+## 1. Instalación
 
 Clonar el proyecto desde github:
 https://github.com/yanpieer-romero-unmsm/spring-app-tipoCambio.git
@@ -62,7 +63,15 @@ docker run --name spring-app-tipocambio -p 8090:8090 spring-app-tipocambio:lates
 #### ó en su defecto:
 docker run -p 8090:8090 spring-app-tipocambio:latest
 
-#### 1.2.1 Descargar y despliegue de imagen remota
+#### 1.2.1 Subir imagen a DockerHub
+
+#### Tagear la imagen local a DockerHub:
+docker tag spring-app-tipocambio yanpieer/spring-app-tipocambio
+
+#### Pushear la imagen local a DockerHub:
+docker push yanpieer/spring-app-tipocambio
+
+#### 1.2.2 Descargar y despliegue de imagen remota
 
 #### Descargar imagen del repositorio remoto dockerhub:
 docker pull yanpieer/spring-app-tipocambio
@@ -70,7 +79,7 @@ docker pull yanpieer/spring-app-tipocambio
 #### Levantar imagen remota dockerhub:
 docker run -p 8090:8090 yanpieer/spring-app-tipocambio
 
-#### 1.2.2 Pruebas Funcionales
+#### 1.2.3 Pruebas Funcionales
 
 Tal como en el punto 1.1.2 las pruebas deberan ser ejecuciones directas al servicio en desarrollo
 ## 2. Uso
