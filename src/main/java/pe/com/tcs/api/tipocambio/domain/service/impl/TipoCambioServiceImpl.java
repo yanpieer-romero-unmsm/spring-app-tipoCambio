@@ -14,15 +14,15 @@ import pe.com.tcs.api.tipocambio.common.util.Constantes;
 import pe.com.tcs.api.tipocambio.common.util.PropertiesExternos;
 import pe.com.tcs.api.tipocambio.common.util.UtilService;
 import pe.com.tcs.api.tipocambio.domain.service.TipoCambioService;
-import pe.com.tcs.api.tipocambio.repository.TcsRepository;
-import pe.com.tcs.api.tipocambio.repository.dto.MonedaDto;
-import pe.com.tcs.api.tipocambio.repository.entity.Moneda;
+import pe.com.tcs.api.tipocambio.integration.repository.monedas.MonedaRepository;
+import pe.com.tcs.api.tipocambio.integration.repository.monedas.dto.MonedaDto;
+import pe.com.tcs.api.tipocambio.integration.repository.monedas.entity.Moneda;
 
 @RequiredArgsConstructor
 @Service
 public class TipoCambioServiceImpl implements TipoCambioService {
 
-    private final TcsRepository repositorio;
+    private final MonedaRepository repositorio;
     private final MonedaMapper mapper;
     private final PropertiesExternos properties;
     private final UtilService utilService;
@@ -85,7 +85,7 @@ public class TipoCambioServiceImpl implements TipoCambioService {
                         .tipo(monedaEntity.getTipo())
                         .valor(monedaEntity.getValor())
                         .build();
-            }else {
+            } else {
                 response.setResponseStatus(ResponseStatus.builder()
                         .codigoRespuesta(properties.idf1Codigo)
                         .descripcionRespuesta(properties.idf1Mensaje)

@@ -9,5 +9,7 @@ public class Constantes {
     public static final String FIN_METODO_CONVERTIR = "================= FIN DEL METODO CONVERTIR TIPO DE CAMBIO =================";
     public static final String INICIO_METODO_ACTUALIZAR = "================= INICIO DEL METODO ACTUALIZAR TIPO DE CAMBIO =================";
     public static final String FIN_METODO_ACTUALIZAR = "================= FIN DEL METODO ACTUALIZAR TIPO DE CAMBIO =================";
+    public static final String INICIO_METODO_AUTENTICAR = "================= INICIO DEL METODO AUTENTICAR =================";
+    public static final String FIN_METODO_AUTENTICAR = "================= FIN DEL METODO AUTENTICAR =================";
     public static final String TIEMPO_TOTAL = "TIEMPO TOTAL DEL PROCESO: [%s milisegundos]%n";
 }

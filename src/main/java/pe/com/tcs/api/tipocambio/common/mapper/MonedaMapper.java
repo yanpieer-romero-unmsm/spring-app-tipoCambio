@@ -3,8 +3,8 @@ package pe.com.tcs.api.tipocambio.common.mapper;
 import org.mapstruct.Builder;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import pe.com.tcs.api.tipocambio.repository.dto.MonedaDto;
-import pe.com.tcs.api.tipocambio.repository.entity.Moneda;
+import pe.com.tcs.api.tipocambio.integration.repository.monedas.dto.MonedaDto;
+import pe.com.tcs.api.tipocambio.integration.repository.monedas.entity.Moneda;
 
 @Mapper(componentModel = "spring", builder = @Builder(disableBuilder = true))
 public interface MonedaMapper {

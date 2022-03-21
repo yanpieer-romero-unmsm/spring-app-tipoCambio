@@ -1,4 +1,4 @@
-package pe.com.tcs.api.tipocambio.repository.dto;
+package pe.com.tcs.api.tipocambio.integration.repository.monedas.dto;
 
 import lombok.*;
 
