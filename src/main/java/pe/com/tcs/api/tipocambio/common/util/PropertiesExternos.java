@@ -14,6 +14,10 @@ public class PropertiesExternos {
     public String idf1Codigo;
     @Value("${idf1.mensaje}")
     public String idf1Mensaje;
+    @Value("${idf2.codigo}")
+    public String idf2Codigo;
+    @Value("${idf2.mensaje}")
+    public String idf2Mensaje;
 
     @Value("${idt1.codigo}")
     public String idt1Codigo;
@@ -27,4 +31,7 @@ public class PropertiesExternos {
     public String idt3Codigo;
     @Value("${idt3.mensaje}")
     public String idt3Mensaje;
+
+    @Value("${secret.key}")
+    public String secretKey;
 }

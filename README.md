@@ -50,24 +50,24 @@ La prueba unitaria será pegarle al servicio.
 El despliegue se hará con [docker](https://docs.docker.com/get-docker/) para eso se procura tenerlo instalado, 
 luego aplicar los siguiente comandos:
 
-####Crear imagen:
+#### Crear imagen:
 docker build -t spring-app-tipocambio .
 
-####Visualizar las imagenes creadas:
+#### Visualizar las imagenes creadas:
 docker images
 
-####Levantar la aplicación:
+#### Levantar la aplicación:
 docker run --name spring-app-tipocambio -p 8090:8090 spring-app-tipocambio:latest
 
-####ó en su defecto:
+#### ó en su defecto:
 docker run -p 8090:8090 spring-app-tipocambio:latest
 
 #### 1.2.1 Descargar y despliegue de imagen remota
 
-####Descargar imagen del repositorio remoto dockerhub:
+#### Descargar imagen del repositorio remoto dockerhub:
 docker pull yanpieer/spring-app-tipocambio
 
-####Levantar imagen remota dockerhub:
+#### Levantar imagen remota dockerhub:
 docker run -p 8090:8090 yanpieer/spring-app-tipocambio
 
 #### 1.2.2 Pruebas Funcionales

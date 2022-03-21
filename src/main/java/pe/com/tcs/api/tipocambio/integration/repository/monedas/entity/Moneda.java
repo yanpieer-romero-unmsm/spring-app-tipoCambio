@@ -1,4 +1,4 @@
-package pe.com.tcs.api.tipocambio.repository.entity;
+package pe.com.tcs.api.tipocambio.integration.repository.monedas.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

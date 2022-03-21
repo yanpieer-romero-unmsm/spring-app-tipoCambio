@@ -25,6 +25,8 @@
         <lomok.version>1.18.20</lomok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <log4j>1.2.16</log4j>
+        <jjwt>0.9.1</jjwt>
+        <jaxb>2.3.0</jaxb>
     </properties>
 
     <dependencies>
@@ -103,6 +105,26 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j}</version>
+        </dependency>
+
+        <!-- spring security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- jjwt -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jjwt}</version>
+        </dependency>
+
+        <!-- jaxb -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb}</version>
         </dependency>
 
     </dependencies>

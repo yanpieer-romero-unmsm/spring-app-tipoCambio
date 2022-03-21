@@ -4,8 +4,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pe.com.tcs.api.tipocambio.canonical.request.actualizar.MonedaRequestType;
+import pe.com.tcs.api.tipocambio.canonical.request.authenticate.AuthenticationRequestType;
 import pe.com.tcs.api.tipocambio.canonical.request.convertir.TipoCambioRequestType;
 import pe.com.tcs.api.tipocambio.canonical.response.actualizar.MonedaResponseType;
+import pe.com.tcs.api.tipocambio.canonical.response.authenticate.AuthenticationResponseType;
 import pe.com.tcs.api.tipocambio.canonical.response.convertir.TipoCambioResponseType;
 import pe.com.tcs.api.tipocambio.common.bean.DetalleErrorType;
 import pe.com.tcs.api.tipocambio.common.bean.ResponseStatus;
@@ -79,6 +81,28 @@ public class UtilService {
         return MonedaResponseType.builder().responseStatus(responseStatus).desarrollador(Constantes.DESARROLLADOR).build();
     }
 
+    public AuthenticationResponseType getResponseIDTAutenticar(Exception e) {
+        String error = (e.getMessage() == Constantes.NULO) ? Constantes.ERROR: e.getMessage();
+
+        ResponseStatus responseStatus = ResponseStatus.builder()
+                .status(properties.idf1Codigo)
+                .codigoRespuesta(properties.idt3Codigo)
+                .descripcionRespuesta(error)
+                .origen(Constantes.TEXTO_VACIO)
+                .fecha(new Date())
+                .ubicacionError(error)
+                .build();
+
+        DetalleErrorType detalleError = DetalleErrorType.builder()
+                .errorCode(properties.idt3Codigo)
+                .errorDescripcion(e.toString())
+                .build();
+
+        responseStatus.setDetalleError(detalleError);
+
+        return AuthenticationResponseType.builder().responseStatus(responseStatus).desarrollador(Constantes.DESARROLLADOR).build();
+    }
+
     public boolean validarRequestConvertir(TipoCambioRequestType request) {
         return request.getMonto() != Constantes.NULO && request.getMonto() >= 0
                 && request.getMonedaOrigen() != Constantes.NULO && !request.getMonedaOrigen().isBlank()
@@ -90,4 +114,8 @@ public class UtilService {
                 && request.getValor() >= 0 && request.getValor() != Constantes.NULO;
     }
 
+    public boolean validarRequestAutenticar(AuthenticationRequestType request) {
+        return request.getUsername() != Constantes.NULO && !request.getUsername().isBlank()
+                && request.getPassword() != Constantes.NULO && !request.getPassword().isBlank();
+    }
 }
