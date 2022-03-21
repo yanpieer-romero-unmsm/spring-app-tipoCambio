@@ -8,7 +8,7 @@ Web service que permite realizar el tipo de cambio y actualizar los valores de l
         - [1.1.1 Pre-requisitos de Construcción](#pre-requisitos-de-construccion)
         - [1.1.2 Pruebas Unitarias](#pruebas-unitarias)
     - [1.2 Despliegue](#proceso-despliegue)
-        - [1.2.1 Subir imagen a DockerHub](#Subir imagen a DockerHub)
+        - [1.2.1 Subir imagen a DockerHub](#Subir-imagen-a-DockerHub)
         - [1.2.2 Descargar y despliegue de imagen remota](#Descargar-imagen-remota)
         - [1.2.3 Pruebas Funcionales](#pruebas-funcionales)
 - [2. Uso](#uso)
