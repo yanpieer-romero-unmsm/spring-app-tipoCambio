@@ -4,15 +4,15 @@ Web service que permite realizar el tipo de cambio y actualizar los valores de l
 ## Tabla de contenidos
 
 - [1. Instalación](#1-instalación)
-    - [1.1 Construcción](#proceso-construccion)
-        - [1.1.1 Pre-requisitos de Construcción](#pre-requisitos-de-construccion)
-        - [1.1.2 Pruebas Unitarias](#pruebas-unitarias)
-    - [1.2 Despliegue](#proceso-despliegue)
-        - [1.2.1 Subir imagen a DockerHub](#Subir-imagen-a-DockerHub)
-        - [1.2.2 Descargar y despliegue de imagen remota](#Descargar-imagen-remota)
-        - [1.2.3 Pruebas Funcionales](#pruebas-funcionales)
-- [2. Uso](#uso)
-- [3. Autor](#autor)
+    - [1.1 Construcción](#11-construcción)
+        - [1.1.1 Pre-requisitos de Construcción](#111-pre-requisitos-de-construcción)
+        - [1.1.2 Pruebas Unitarias](#112-pruebas-unitarias)
+    - [1.2 Despliegue](#12-despliegue)
+        - [1.2.1 Subir imagen a DockerHub](#121-subir-imagen-a-dockerhub)
+        - [1.2.2 Descargar y despliegue de imagen remota](#122-descargar-y-despliegue-de-imagen-remota)
+        - [1.2.3 Pruebas Funcionales](#123-pruebas-funcionales)
+- [2. Uso](#2-uso)
+- [3. Autor](#3-autor)
 
 ## 1. Instalación
 
