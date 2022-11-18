@@ -144,7 +144,7 @@
                     <archive>
                         <manifest>
                             <!-- give full qualified name of your main class-->
-                            <mainClass>pe.com.tcs.api.tipocambio.Application</mainClass>
+                            <mainClass>pe.com.tcs.api.exchangerate.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

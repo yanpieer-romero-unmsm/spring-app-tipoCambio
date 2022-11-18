@@ -1,0 +1,54 @@
+server:
+  port: 8099
+
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+
+# http://localhost:8090/h2-console/
+  datasource:
+    url: jdbc:h2:mem:tcsdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    defer-datasource-initialization: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: true
+
+# Errores funcionales idf's
+idf0:
+  code: 0
+  message: Operaci\u00f3n exitosa
+idf1:
+  code: 1
+  message: Uno o varios parametros del request son inv\u00e1lidos
+idf2:
+  code: 2
+  message: El username o paswword son incorrectos
+
+# Errores técnicos idt's
+idt1:
+  code: -1
+  message: Error de timeout en %s - %s=
+idt2:
+  code: -2
+  message: Error de disponibilidad en %s - %s =
+idt3:
+  code: -3
+  message: Error inesperado. Error = [%s]
+
+# security
+secret:
+  key: secretTcs
